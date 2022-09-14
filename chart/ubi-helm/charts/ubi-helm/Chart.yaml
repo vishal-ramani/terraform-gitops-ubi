@@ -1,4 +1,4 @@
 apiVersion: v1
 description: A Helm chart to deploy an ubi image.
-name: terraform-gitops-ubi
+name: ubi-helm
 version: "v0.0.1"

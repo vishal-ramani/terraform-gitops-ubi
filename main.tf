@@ -1,11 +1,11 @@
 locals {
-  name          = "helloworld-with-ubi-helm"
+  name          = "ubi-helm"
   bin_dir       = module.setup_clis.bin_dir
   yaml_dir      = "${path.cwd}/.tmp/${local.name}/chart/${local.name}"
   service_url   = "http://${local.name}.${var.namespace}"
   cluster_type = var.cluster_type == "kubernetes" ? "kubernetes" : "openshift"
   values_content = {
-    helloworld_with_ubi_helm= {
+    ubi-helm= {
       "replicaCount": 1
       "image.repository" = "registry.access.redhat.com/ubi8/ubi"
       "image.tag" = "latest"

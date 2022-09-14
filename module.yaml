@@ -1,6 +1,6 @@
-name: ""
+name: "terraform-gitops-ubi"
 type: gitops
-description: ""
+description: "terraform-gitops-ubi"
 tags:
   - tools
   - gitops

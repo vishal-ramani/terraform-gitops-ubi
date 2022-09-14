@@ -79,3 +79,8 @@ variable "server_name" {
   description = "The name of the server"
   default     = "default"
 }
+
+variable "cluster_type" {
+  description = "The cluster type (openshift or kubernetes)"
+  default     = "openshift"
+}

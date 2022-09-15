@@ -21,6 +21,10 @@ The following section shows an deployment with the `terraform-gitops-ubi` module
 
 ![](images/module-01.png)
 
+### Access a running UBI container in OpenShift
+
+![](images/module-03.gif)
+
 ## 3. Software dependencies
 
 The module depends on the following software components:

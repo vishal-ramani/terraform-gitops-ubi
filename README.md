@@ -1,17 +1,19 @@
 # Terraform GitOps UBI module
 
-## Objective
+## 1. Objective
 
 This module is an example implementation for a `custom module`.
 
 Therefor it just deploys a pure [ubi image](https://catalog.redhat.com/software/containers/ubi8/ubi/5c359854d70cc534b3a3784e) as a container with [Helm](https://helm.sh/).
 With the [values.yaml](https://github.com/thomassuedbroecker/ubi-helm/blob/main/charts/ubi-helm/values.yaml) in the Helm chart we can configure [`replica count`](https://github.com/thomassuedbroecker/ubi-helm/blob/main/charts/ubi-helm/values.yaml#L6) of the pods. The deployed containers are only a basic ubi operating system.
 
-## Example deployment
+## 2. Example deployment
 
-### GitOps Argo CD
+The following section shows an deployment with the `terraform-gitops-ubi` module using GitOps.
 
-* GitOps context
+### GitOps in Argo CD
+
+* GitOps context (app-of-apps)
 
 ![](images/module-02.png)
 
@@ -19,7 +21,7 @@ With the [values.yaml](https://github.com/thomassuedbroecker/ubi-helm/blob/main/
 
 ![](images/module-01.png)
 
-## Software dependencies
+## 3. Software dependencies
 
 The module depends on the following software components:
 
@@ -31,7 +33,7 @@ The module depends on the following software components:
 
 None
 
-### Example usage
+## 4. Example usage
 
 ```hcl-terraform
 module "terraform-gitops-ubi" {

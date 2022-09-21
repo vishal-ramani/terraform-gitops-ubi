@@ -5,3 +5,4 @@ replicaCount: 2
 image:
   repository: "registry.access.redhat.com/ubi8/ubi"
   tag: latest
+command: "echo helloworld!"

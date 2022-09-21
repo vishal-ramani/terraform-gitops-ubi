@@ -27,11 +27,11 @@ spec:
           args:
             - /bin/sh
             - -c
-            - touch /tmp/healthy; sleep 300
-          livenessProbe:
-            exec:
-              command:
-              - cat
-              - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
+            - $COMMAND
+          env:
+            - name: COMMAND
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: COMMAND
+                  optional: true # mark the variable as optional

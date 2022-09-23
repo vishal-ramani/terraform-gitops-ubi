@@ -24,10 +24,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: Always
-          args:
-            - /bin/sh
-            - -c
-            - $COMMAND
           env:
             - name: COMMAND
               valueFrom:
@@ -35,3 +31,7 @@ spec:
                   name: {{ template "fullname" . }}
                   key: COMMAND
                   optional: true # mark the variable as optional
+          args:
+            - /bin/sh
+            - -c
+            - $COMMAND

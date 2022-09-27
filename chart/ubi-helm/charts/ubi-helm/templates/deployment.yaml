@@ -34,7 +34,6 @@ spec:
           command: ["/bin/sh","-c"]
           args: 
             - while true; do
-              echo -en '\n';
               $COMMAND;
               sleep 1000;
               done;

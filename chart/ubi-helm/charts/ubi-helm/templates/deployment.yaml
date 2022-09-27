@@ -31,7 +31,10 @@ spec:
                   name: {{ template "fullname" . }}
                   key: COMMAND
                   optional: true # mark the variable as optional
-          args:
-            - /bin/sh
-            - -c
-            - $COMMAND
+          command: ["/bin/sh","-c"]
+          args: 
+            - while true; do
+              echo -en '\n';
+              $COMMAND;
+              sleep 1000;
+              done;

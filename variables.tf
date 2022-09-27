@@ -84,3 +84,8 @@ variable "cluster_type" {
   description = "The cluster type (openshift or kubernetes)"
   default     = "openshift"
 }
+
+variable "command" {
+  description = "command to run in container"
+  default     = ""
+}

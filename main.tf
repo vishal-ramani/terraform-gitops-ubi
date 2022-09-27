@@ -9,6 +9,7 @@ locals {
       "replicaCount": 1
       "image.repository" = "registry.access.redhat.com/ubi8/ubi"
       "image.tag" = "latest"
+      "command" = "${var.command}"
     }
   }
   layer = "applications"

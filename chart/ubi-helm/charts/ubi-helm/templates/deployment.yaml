@@ -24,14 +24,16 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: Always
-          args:
-            - /bin/sh
-            - -c
-            - touch /tmp/healthy; sleep 300
-          livenessProbe:
-            exec:
-              command:
-              - cat
-              - /tmp/healthy
-            initialDelaySeconds: 5
-            periodSeconds: 5
+          env:
+            - name: COMMAND
+              valueFrom:
+                configMapKeyRef:
+                  name: {{ template "fullname" . }}
+                  key: COMMAND
+                  optional: true # mark the variable as optional
+          command: ["/bin/sh","-c"]
+          args: 
+            - while true; do
+              $COMMAND;
+              sleep 1000;
+              done;
